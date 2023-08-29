@@ -1,15 +1,21 @@
 package lang.print.gaps.task5;
+import java.util.logging.*;
 
 
 public class NumberDivider {
-    void divide(int toBeDivided) {
+    private static final Logger logger = Logger.getLogger(NumberDivider.class.getName());
+
+    void divide(float toBeDivided) {
+        logger.setLevel(Level.INFO);
         float newNumber = toBeDivided/5;
-        System.out.println("New number is: "+ newNumber);
+        String text = "New number is: "+ newNumber;
+        logger.log(Level.INFO, text);
     }
     public static void main(String[] args)
     {
+
         NumberDivider divider= new NumberDivider();
-        int tobeDivided = 32;
+        float tobeDivided = 32;
         divider.divide(tobeDivided);
     }
 }
